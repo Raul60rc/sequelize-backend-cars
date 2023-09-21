@@ -4,8 +4,7 @@ const cors = require("cors");
 const app = express();
 
 // Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); // This is used for parsing URL-encoded data
 app.use(cors());
 
 // Routers
@@ -17,8 +16,6 @@ const userRouter = require("./src/api/users/userRoutes");
 app.use("/api/cars", carRouter);
 app.use("/api/car-ratings", carRatingRoutes);
 app.use("/api/users", userRouter);
-
-// Static Images Folder
 
 // Port
 const PORT = process.env.PORT || 8080;

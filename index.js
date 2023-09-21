@@ -27,9 +27,9 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.cars = require("./carsModel.js")(sequelize, DataTypes);
-db.users = require("./userModel.js")(sequelize, DataTypes);
-db.rating = require("./ratingCars.js")(sequelize, DataTypes);
+db.cars = require("./src/api/cars/carsModel")(sequelize, DataTypes);
+db.users = require("./src/api/users/userModel")(sequelize, DataTypes);
+db.rating = require("./src/api/ratingCars/ratingCars")(sequelize, DataTypes);
 
 db.sequelize.sync({ force: false }).then(() => {
   console.log("Database sync done!");
